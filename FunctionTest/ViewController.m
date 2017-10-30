@@ -13,6 +13,7 @@
 #import "YJNFormChooseTableViewCell.h"
 
 #import "ChooseListTableViewController.h"
+#import "UnderlineTextViewController.h"
 
 #define screenWidth [UIScreen mainScreen].bounds.size.width
 #define screenHeight [UIScreen mainScreen].bounds.size.height
@@ -59,8 +60,14 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ChooseListTableViewController *choose = [[ChooseListTableViewController alloc] initWithStyle:UITableViewStylePlain];
-    [self.navigationController pushViewController:choose animated:YES];
+    if (indexPath.row == 0) {//Choose
+        ChooseListTableViewController *choose = [[ChooseListTableViewController alloc] initWithStyle:UITableViewStylePlain];
+        [self.navigationController pushViewController:choose animated:YES];
+    }else if (indexPath.row == 1) {//UnderlineTextView
+        UnderlineTextViewController *uvc = [[UnderlineTextViewController alloc] init];
+        [self.navigationController pushViewController:uvc animated:YES];
+    }
+    
 }
 
 -(UITableView *)formTable {
