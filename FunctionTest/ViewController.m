@@ -12,10 +12,12 @@
 #import "Masonry.h"
 #import "YJNFormChooseTableViewCell.h"
 
+#import "ChooseListTableViewController.h"
+
 #define screenWidth [UIScreen mainScreen].bounds.size.width
 #define screenHeight [UIScreen mainScreen].bounds.size.height
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic, strong) NSMutableArray *dataArr;
+@property (nonatomic, strong) NSArray *dataArr;
 @property (nonatomic, strong) UITableView *formTable;
 @end
 
@@ -31,15 +33,7 @@
 }
 
 -(void)p_initData {
-    _dataArr = [[NSMutableArray alloc] initWithCapacity:10];
-    for (int i = 0; i < 10; i++) {
-        YJNQuestionModel *question = [[YJNQuestionModel alloc] init];
-        question.questionID = [NSString stringWithFormat:@"%d",i + 100];
-        question.content = [NSString stringWithFormat:@"问题内容%d",i];
-        question.options = @[@"好",@"不好",@"可以",@"不可以"];
-        question.type = i%2 ? YJNChooseStyleSingle : YJNChooseStyleMulty;
-        [_dataArr addObject:question];
-    }
+    _dataArr = @[@"选择视图",@"带下划线的文本视图"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,22 +46,21 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    YJNFormChooseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChooseCell"];
-    YJNQuestionModel *question = _dataArr[indexPath.row];
-    question.index = indexPath.row;
-    
-    cell.selectResultBlock = ^(NSInteger currentIndex, NSArray *result) {
-        question.selectedResults = result;
-        NSString *temp = @"";
-        for (NSNumber *selected in result) {
-            temp = [temp stringByAppendingString:[NSString stringWithFormat:@"%@",selected]];
-        }
-        NSLog(@"%@", temp);
-        NSLog(@"changed index:%d,result=%@",(int)currentIndex,temp);
-    };
-    
-    [cell configCellWithQuestion:question];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    }
+    cell.textLabel.text = _dataArr[indexPath.row];
     return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 50.0f;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ChooseListTableViewController *choose = [[ChooseListTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    [self.navigationController pushViewController:choose animated:YES];
 }
 
 -(UITableView *)formTable {
@@ -75,9 +68,6 @@
         _formTable = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _formTable.delegate = self;
         _formTable.dataSource = self;
-        [_formTable registerClass:[YJNFormChooseTableViewCell class] forCellReuseIdentifier:@"ChooseCell"];
-        _formTable.estimatedRowHeight = 240;
-        _formTable.rowHeight = UITableViewAutomaticDimension;
     }
     return _formTable;
 }

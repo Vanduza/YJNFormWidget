@@ -27,6 +27,7 @@
 		DC4B171A1F99F12C00E53E95 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4B170C1F99F12C00E53E95 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		DC4B171B1F99F12C00E53E95 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4B170E1F99F12C00E53E95 /* View+MASAdditions.m */; };
 		DC4B171C1F99F12C00E53E95 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4B17111F99F12C00E53E95 /* ViewController+MASAdditions.m */; };
+		DC5F8E9C1FA6D02D0013F8CD /* ChooseListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5F8E9B1FA6D02D0013F8CD /* ChooseListTableViewController.m */; };
 		DCF909C61F9EDF0400A1DC02 /* YJNQuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF909C51F9EDF0400A1DC02 /* YJNQuestionModel.m */; };
 		DCF909CC1F9F345300A1DC02 /* YJNFormOptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF909CB1F9F345300A1DC02 /* YJNFormOptionView.m */; };
 		DCF909CF1FA0915300A1DC02 /* YJNFormGenderChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF909CE1FA0915300A1DC02 /* YJNFormGenderChooseView.m */; };
@@ -75,6 +76,8 @@
 		DC4B170F1F99F12C00E53E95 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		DC4B17101F99F12C00E53E95 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		DC4B17111F99F12C00E53E95 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		DC5F8E9A1FA6D02D0013F8CD /* ChooseListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseListTableViewController.h; sourceTree = "<group>"; };
+		DC5F8E9B1FA6D02D0013F8CD /* ChooseListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseListTableViewController.m; sourceTree = "<group>"; };
 		DCF909C41F9EDF0400A1DC02 /* YJNQuestionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJNQuestionModel.h; sourceTree = "<group>"; };
 		DCF909C51F9EDF0400A1DC02 /* YJNQuestionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJNQuestionModel.m; sourceTree = "<group>"; };
 		DCF909CA1F9F345300A1DC02 /* YJNFormOptionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJNFormOptionView.h; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 				DC4B16DF1F99F0F200E53E95 /* LaunchScreen.storyboard */,
 				DC4B16E21F99F0F200E53E95 /* Info.plist */,
 				DC4B16E31F99F0F200E53E95 /* main.m */,
+				DC5F8E9A1FA6D02D0013F8CD /* ChooseListTableViewController.h */,
+				DC5F8E9B1FA6D02D0013F8CD /* ChooseListTableViewController.m */,
 			);
 			path = FunctionTest;
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 				DCF909CF1FA0915300A1DC02 /* YJNFormGenderChooseView.m in Sources */,
 				DC4B16F61F99F11E00E53E95 /* YJNFormChooseView.m in Sources */,
 				DC4B16D91F99F0F200E53E95 /* ViewController.m in Sources */,
+				DC5F8E9C1FA6D02D0013F8CD /* ChooseListTableViewController.m in Sources */,
 				DC4B171B1F99F12C00E53E95 /* View+MASAdditions.m in Sources */,
 				DC4B17131F99F12C00E53E95 /* MASCompositeConstraint.m in Sources */,
 				DCF909C61F9EDF0400A1DC02 /* YJNQuestionModel.m in Sources */,
