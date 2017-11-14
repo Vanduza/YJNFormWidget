@@ -30,17 +30,16 @@
 #pragma mark - 视图绘制
 -(void)p_initView {
     //创建选择视图
-    self.backgroundColor = [UIColor cyanColor];
     [self addSubview:self.titleLabel];
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.equalTo(self);
     }];
+    [_titleLabel setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
     
     UIView *backView = [[UIView alloc] init];
-    backView.backgroundColor = [UIColor colorWithWhite:0.6 alpha:1];
     [self addSubview:backView];
     [backView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_titleLabel.mas_bottom);
+        make.top.equalTo(_titleLabel.mas_bottom).offset(20);
         make.left.right.equalTo(self);
         make.bottom.equalTo(self).priorityLow();
     }];
@@ -50,6 +49,7 @@
     UIView *lastView = nil;
     for (int i = 0; i < 10; i++) {
         YJNFormOptionView *optionView = [[YJNFormOptionView alloc] init];
+        optionView.icon.hidden = YES;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(optionSelected:)];
         [optionView addGestureRecognizer:tap];
         optionView.userInteractionEnabled = YES;
@@ -80,17 +80,33 @@
     }];
 }
 
--(void)configViewWithQuestion:(YJNQuestionModel *)question {
+-(void)yjn_prepareForReuse {
+    for (YJNFormOptionView *option in self.optionViews) {
+        option.selected = NO;
+        option.icon.hidden = YES;
+        [option mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(0.0f);
+        }];
+    }
+}
+
+-(void)yjn_configViewWithQuestion:(YJNQuestionModel *)question {
     _currentQuestion = question;
-    NSLog(@"questionID=%@,selectedResult=%@",question.questionID,question.selectedResults);
+    //设置问题显示状态,展示状态并且为空标题为红色
+//    if (question.isEmpty) {
+//        _titleLabel.textColor = [UIColor colorWithRed:1.0 green:0.36 blue:0.22 alpha:1.0];
+//    }else {
+//        _titleLabel.textColor = [UIColor colorWithRed:0.26 green:0.26 blue:0.26 alpha:1.0];
+//    }
+//    _titleLabel.text = question.label;
     _style = question.type;
     for (int i = 0; i < question.options.count; i++) {
         YJNFormOptionView *optionView = [_optionViews objectAtIndex:i];
         if (optionView) {
+            optionView.icon.hidden = NO;
             [optionView mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.height.mas_equalTo(50.0f);
             }];
-            optionView.optionLabel.text = question.options[i];
             NSNumber *result = question.selectedResults?question.selectedResults[i]:@0;
             optionView.selected = result.boolValue;
         }
@@ -149,7 +165,7 @@
 -(UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.text = @"Title";
+        _titleLabel.text = @"";
         _titleLabel.font = [UIFont systemFontOfSize:14.0f];
         _titleLabel.textColor = [UIColor colorWithRed:0.26 green:0.26 blue:0.26 alpha:1.0];
     }

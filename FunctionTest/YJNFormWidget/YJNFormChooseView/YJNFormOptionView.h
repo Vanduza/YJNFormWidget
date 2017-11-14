@@ -10,5 +10,6 @@
 
 @interface YJNFormOptionView : UIView
 @property (nonatomic, strong) UILabel *optionLabel;
+@property (nonatomic, strong) UIImageView *icon;
 @property (nonatomic, assign) BOOL selected;
 @end

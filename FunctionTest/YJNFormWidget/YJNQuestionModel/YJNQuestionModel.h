@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "YJNFormChooseView.h"
+
+typedef NS_ENUM(NSInteger,YJNChooseStyle){
+    YJNChooseStyleSingle = 0,
+    YJNChooseStyleMulty  = 1
+};
 
 @interface YJNQuestionModel : NSObject
 /**问题ID*/

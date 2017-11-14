@@ -28,11 +28,10 @@
 		DC4B171C1F99F12C00E53E95 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4B17111F99F12C00E53E95 /* ViewController+MASAdditions.m */; };
 		DC5F8E9C1FA6D02D0013F8CD /* ChooseListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5F8E9B1FA6D02D0013F8CD /* ChooseListTableViewController.m */; };
 		DC5F8EA71FA6D6FB0013F8CD /* YJNFormChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5F8E9F1FA6D6FB0013F8CD /* YJNFormChooseView.m */; };
-		DC5F8EA81FA6D6FB0013F8CD /* YJNFormGenderChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5F8EA11FA6D6FB0013F8CD /* YJNFormGenderChooseView.m */; };
 		DC5F8EA91FA6D6FB0013F8CD /* YJNFormOptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5F8EA31FA6D6FB0013F8CD /* YJNFormOptionView.m */; };
-		DC5F8EAA1FA6D6FB0013F8CD /* YJNQuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5F8EA61FA6D6FB0013F8CD /* YJNQuestionModel.m */; };
 		DC5F8EB11FA6FA1B0013F8CD /* UnderlineTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5F8EB01FA6FA1B0013F8CD /* UnderlineTextViewController.m */; };
 		DC8F5A931FBAEBCC000A463A /* YJNFormUnderlineTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F5A921FBAEBCC000A463A /* YJNFormUnderlineTextView.m */; };
+		DC8F5A971FBAF1F9000A463A /* YJNQuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F5A951FBAF1F9000A463A /* YJNQuestionModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,16 +79,14 @@
 		DC5F8E9B1FA6D02D0013F8CD /* ChooseListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseListTableViewController.m; sourceTree = "<group>"; };
 		DC5F8E9E1FA6D6FB0013F8CD /* YJNFormChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJNFormChooseView.h; sourceTree = "<group>"; };
 		DC5F8E9F1FA6D6FB0013F8CD /* YJNFormChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJNFormChooseView.m; sourceTree = "<group>"; };
-		DC5F8EA01FA6D6FB0013F8CD /* YJNFormGenderChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJNFormGenderChooseView.h; sourceTree = "<group>"; };
-		DC5F8EA11FA6D6FB0013F8CD /* YJNFormGenderChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJNFormGenderChooseView.m; sourceTree = "<group>"; };
 		DC5F8EA21FA6D6FB0013F8CD /* YJNFormOptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJNFormOptionView.h; sourceTree = "<group>"; };
 		DC5F8EA31FA6D6FB0013F8CD /* YJNFormOptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJNFormOptionView.m; sourceTree = "<group>"; };
-		DC5F8EA51FA6D6FB0013F8CD /* YJNQuestionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJNQuestionModel.h; sourceTree = "<group>"; };
-		DC5F8EA61FA6D6FB0013F8CD /* YJNQuestionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJNQuestionModel.m; sourceTree = "<group>"; };
 		DC5F8EAF1FA6FA1B0013F8CD /* UnderlineTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnderlineTextViewController.h; sourceTree = "<group>"; };
 		DC5F8EB01FA6FA1B0013F8CD /* UnderlineTextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnderlineTextViewController.m; sourceTree = "<group>"; };
 		DC8F5A911FBAEBCC000A463A /* YJNFormUnderlineTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJNFormUnderlineTextView.h; sourceTree = "<group>"; };
 		DC8F5A921FBAEBCC000A463A /* YJNFormUnderlineTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJNFormUnderlineTextView.m; sourceTree = "<group>"; };
+		DC8F5A951FBAF1F9000A463A /* YJNQuestionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJNQuestionModel.m; sourceTree = "<group>"; };
+		DC8F5A961FBAF1F9000A463A /* YJNQuestionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJNQuestionModel.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +141,7 @@
 		DC4B16EA1F99F11E00E53E95 /* YJNFormWidget */ = {
 			isa = PBXGroup;
 			children = (
+				DC8F5A941FBAF1F9000A463A /* YJNQuestionModel */,
 				DC8F5A901FBAEBCC000A463A /* YJNFormUnderlineTextView */,
 				DC5F8E9D1FA6D6FB0013F8CD /* YJNFormChooseView */,
 				DC4B16EB1F99F11E00E53E95 /* YJNFormChooseTableViewCell.h */,
@@ -192,22 +190,10 @@
 			children = (
 				DC5F8E9E1FA6D6FB0013F8CD /* YJNFormChooseView.h */,
 				DC5F8E9F1FA6D6FB0013F8CD /* YJNFormChooseView.m */,
-				DC5F8EA01FA6D6FB0013F8CD /* YJNFormGenderChooseView.h */,
-				DC5F8EA11FA6D6FB0013F8CD /* YJNFormGenderChooseView.m */,
 				DC5F8EA21FA6D6FB0013F8CD /* YJNFormOptionView.h */,
 				DC5F8EA31FA6D6FB0013F8CD /* YJNFormOptionView.m */,
-				DC5F8EA41FA6D6FB0013F8CD /* YJNQuestionModel */,
 			);
 			path = YJNFormChooseView;
-			sourceTree = "<group>";
-		};
-		DC5F8EA41FA6D6FB0013F8CD /* YJNQuestionModel */ = {
-			isa = PBXGroup;
-			children = (
-				DC5F8EA51FA6D6FB0013F8CD /* YJNQuestionModel.h */,
-				DC5F8EA61FA6D6FB0013F8CD /* YJNQuestionModel.m */,
-			);
-			path = YJNQuestionModel;
 			sourceTree = "<group>";
 		};
 		DC8F5A901FBAEBCC000A463A /* YJNFormUnderlineTextView */ = {
@@ -217,6 +203,15 @@
 				DC8F5A921FBAEBCC000A463A /* YJNFormUnderlineTextView.m */,
 			);
 			path = YJNFormUnderlineTextView;
+			sourceTree = "<group>";
+		};
+		DC8F5A941FBAF1F9000A463A /* YJNQuestionModel */ = {
+			isa = PBXGroup;
+			children = (
+				DC8F5A951FBAF1F9000A463A /* YJNQuestionModel.m */,
+				DC8F5A961FBAF1F9000A463A /* YJNQuestionModel.h */,
+			);
+			path = YJNQuestionModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,11 +289,9 @@
 				DC4B17141F99F12C00E53E95 /* MASConstraint.m in Sources */,
 				DC4B17171F99F12C00E53E95 /* MASViewAttribute.m in Sources */,
 				DC4B171C1F99F12C00E53E95 /* ViewController+MASAdditions.m in Sources */,
-				DC5F8EAA1FA6D6FB0013F8CD /* YJNQuestionModel.m in Sources */,
 				DC4B17191F99F12C00E53E95 /* NSArray+MASAdditions.m in Sources */,
 				DC4B16F31F99F11E00E53E95 /* YJNFormChooseTableViewCell.m in Sources */,
 				DC4B17181F99F12C00E53E95 /* MASViewConstraint.m in Sources */,
-				DC5F8EA81FA6D6FB0013F8CD /* YJNFormGenderChooseView.m in Sources */,
 				DC5F8EA71FA6D6FB0013F8CD /* YJNFormChooseView.m in Sources */,
 				DC4B17161F99F12C00E53E95 /* MASLayoutConstraint.m in Sources */,
 				DC4B16D91F99F0F200E53E95 /* ViewController.m in Sources */,
@@ -307,6 +300,7 @@
 				DC5F8EA91FA6D6FB0013F8CD /* YJNFormOptionView.m in Sources */,
 				DC5F8E9C1FA6D02D0013F8CD /* ChooseListTableViewController.m in Sources */,
 				DC4B171B1F99F12C00E53E95 /* View+MASAdditions.m in Sources */,
+				DC8F5A971FBAF1F9000A463A /* YJNQuestionModel.m in Sources */,
 				DC4B17131F99F12C00E53E95 /* MASCompositeConstraint.m in Sources */,
 				DC4B171A1F99F12C00E53E95 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				DC4B17151F99F12C00E53E95 /* MASConstraintMaker.m in Sources */,

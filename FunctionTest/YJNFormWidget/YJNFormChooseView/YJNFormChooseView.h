@@ -8,13 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger,YJNChooseStyle){
-    YJNChooseStyleSingle = 0,
-    YJNChooseStyleMulty  = 1
-};
 @class YJNQuestionModel;
 @interface YJNFormChooseView : UIView
 @property (nonatomic, copy) void(^selectedResultBlock)(NSArray <NSNumber *>* selectedIndexs);
-
--(void)configViewWithQuestion:(YJNQuestionModel *)question;
+-(void)yjn_prepareForReuse;
+-(void)yjn_configViewWithQuestion:(YJNQuestionModel *)question;
 @end

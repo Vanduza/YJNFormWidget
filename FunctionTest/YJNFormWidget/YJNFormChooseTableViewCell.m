@@ -39,7 +39,7 @@
 
 -(void)configCellWithQuestion:(YJNQuestionModel *)question {
     _currentQuestion = question;
-    [_chooseView configViewWithQuestion:question];
+    [_chooseView yjn_configViewWithQuestion:question];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
