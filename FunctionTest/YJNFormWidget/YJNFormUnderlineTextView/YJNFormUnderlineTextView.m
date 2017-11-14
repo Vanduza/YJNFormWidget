@@ -54,6 +54,16 @@
         [super setAttributedText:attributedText];
     }
 }
+
+-(void)layoutSubviews {
+    [super layoutSubviews];
+    NSUInteger number = (self.contentSize.height) / (_customFont.lineHeight * _paraStyle.lineHeightMultiple);
+    if (_numberOfLines != number) {
+        _numberOfLines = number;
+        [self setNeedsDisplay];
+    }
+}
+
 -(CGRect)caretRectForPosition:(UITextPosition *)position {
     CGRect oriRect = [super caretRectForPosition:position];
     oriRect.size.height = _customFont.lineHeight + 2;
@@ -94,4 +104,5 @@
         [self setNeedsDisplay];
     }
 }
+
 @end

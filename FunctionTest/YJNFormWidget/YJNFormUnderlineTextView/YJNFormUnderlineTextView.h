@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
 @class YJNFormUnderlineTextView;
 @protocol YJNFormUnderlineTextViewDelegate
 -(void)yjn_textDidchanged:(YJNFormUnderlineTextView *)textView;

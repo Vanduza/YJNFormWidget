@@ -27,6 +27,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self p_initData];
+//    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"XMessageResource.bundle/no_chat_icon"]];
+    
     [self.view addSubview:self.formTable];
     [_formTable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
@@ -67,7 +69,6 @@
         UnderlineTextViewController *uvc = [[UnderlineTextViewController alloc] init];
         [self.navigationController pushViewController:uvc animated:YES];
     }
-    
 }
 
 -(UITableView *)formTable {

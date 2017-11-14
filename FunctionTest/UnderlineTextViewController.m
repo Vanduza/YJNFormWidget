@@ -10,7 +10,7 @@
 #import "YJNFormUnderlineTextView.h"
 #import "Masonry.h"
 
-@interface UnderlineTextViewController ()
+@interface UnderlineTextViewController ()<YJNFormUnderlineTextViewDelegate>
 @property (nonatomic, strong) YJNFormUnderlineTextView *underlineView;
 @end
 
@@ -25,19 +25,7 @@
     self.view.backgroundColor = [UIColor colorWithWhite:0.8 alpha:1.0];
     [self.view addSubview:self.underlineView];
     [_underlineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).offset(10);
-        make.right.equalTo(self.view).offset(-10);
-        make.top.equalTo(self.view).offset(100);
-        make.height.mas_equalTo(200);
-    }];
-    
-    UITextView *testView = [[UITextView alloc] init];
-    [self.view addSubview:testView];
-    [testView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).offset(10);
-        make.right.equalTo(self.view).offset(-10);
-        make.top.equalTo(_underlineView.mas_bottom).offset(20);
-        make.height.mas_equalTo(200);
+        make.edges.equalTo(self.view);
     }];
 }
 
@@ -45,10 +33,23 @@
     [super didReceiveMemoryWarning];
 }
 
+-(void)yjn_textDidchanged:(YJNFormUnderlineTextView *)textView {
+    NSLog(@"文本发生变化:%@",textView.text);
+}
 
 -(YJNFormUnderlineTextView *)underlineView {
     if (!_underlineView) {
         _underlineView = [[YJNFormUnderlineTextView alloc] initWithFont:[UIFont systemFontOfSize:15.0f]];
+        NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc] init];
+        paragraph.lineHeightMultiple = 2.0f;
+        
+        NSDictionary *attribute = @{NSReadOnlyDocumentAttribute:@2,
+                                    NSParagraphStyleAttributeName:paragraph,
+                                    NSFontAttributeName:[UIFont systemFontOfSize:14.0f]
+                                    };
+        NSAttributedString *attr = [[NSAttributedString alloc] initWithString:@" " attributes:attribute];
+        _underlineView.attributedText = attr;
+        _underlineView.yjn_delegate = self;
     }
     return _underlineView;
 }
