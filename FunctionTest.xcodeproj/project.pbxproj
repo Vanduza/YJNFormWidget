@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC3A074A204F92EE00C9C2B2 /* YJNFormTextAreaView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3A0748204F92EE00C9C2B2 /* YJNFormTextAreaView.m */; };
 		DC4B16D61F99F0F200E53E95 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4B16D51F99F0F200E53E95 /* AppDelegate.m */; };
 		DC4B16D91F99F0F200E53E95 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4B16D81F99F0F200E53E95 /* ViewController.m */; };
 		DC4B16DC1F99F0F200E53E95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC4B16DA1F99F0F200E53E95 /* Main.storyboard */; };
@@ -35,6 +36,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC3A0746204F92EE00C9C2B2 /* YJNFormQuestionConfigProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJNFormQuestionConfigProtocol.h; sourceTree = "<group>"; };
+		DC3A0748204F92EE00C9C2B2 /* YJNFormTextAreaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJNFormTextAreaView.m; sourceTree = "<group>"; };
+		DC3A0749204F92EE00C9C2B2 /* YJNFormTextAreaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJNFormTextAreaView.h; sourceTree = "<group>"; };
 		DC4B16D11F99F0F200E53E95 /* FunctionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunctionTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC4B16D41F99F0F200E53E95 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DC4B16D51F99F0F200E53E95 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -100,6 +104,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC3A0745204F92EE00C9C2B2 /* YJNFormProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				DC3A0746204F92EE00C9C2B2 /* YJNFormQuestionConfigProtocol.h */,
+			);
+			path = YJNFormProtocol;
+			sourceTree = "<group>";
+		};
+		DC3A0747204F92EE00C9C2B2 /* YJNFormTextAreaView */ = {
+			isa = PBXGroup;
+			children = (
+				DC3A0748204F92EE00C9C2B2 /* YJNFormTextAreaView.m */,
+				DC3A0749204F92EE00C9C2B2 /* YJNFormTextAreaView.h */,
+			);
+			path = YJNFormTextAreaView;
+			sourceTree = "<group>";
+		};
 		DC4B16C81F99F0F200E53E95 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +162,8 @@
 		DC4B16EA1F99F11E00E53E95 /* YJNFormWidget */ = {
 			isa = PBXGroup;
 			children = (
+				DC3A0745204F92EE00C9C2B2 /* YJNFormProtocol */,
+				DC3A0747204F92EE00C9C2B2 /* YJNFormTextAreaView */,
 				DC8F5A941FBAF1F9000A463A /* YJNQuestionModel */,
 				DC8F5A901FBAEBCC000A463A /* YJNFormUnderlineTextView */,
 				DC5F8E9D1FA6D6FB0013F8CD /* YJNFormChooseView */,
@@ -304,6 +327,7 @@
 				DC4B17131F99F12C00E53E95 /* MASCompositeConstraint.m in Sources */,
 				DC4B171A1F99F12C00E53E95 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				DC4B17151F99F12C00E53E95 /* MASConstraintMaker.m in Sources */,
+				DC3A074A204F92EE00C9C2B2 /* YJNFormTextAreaView.m in Sources */,
 				DC4B16E41F99F0F200E53E95 /* main.m in Sources */,
 				DC4B16D61F99F0F200E53E95 /* AppDelegate.m in Sources */,
 				DC4B16F51F99F11E00E53E95 /* YJNFormFactory.m in Sources */,

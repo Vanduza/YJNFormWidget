@@ -34,10 +34,10 @@
 -(void)setSelected:(BOOL)selected {
     _selected = selected;
     if (selected) {
-        _icon.image = [UIImage imageNamed:@"selected"];
+        _icon.image = [UIImage imageNamed:@"XMessageResource.bundle/selected"];
         _optionLabel.textColor = [UIColor colorWithRed:0.29 green:0.64 blue:0.90 alpha:1.00];
     }else {
-        _icon.image = [UIImage imageNamed:@"unselected"];
+        _icon.image = [UIImage imageNamed:@"XMessageResource.bundle/questionaire_nor"];
         _optionLabel.textColor = [UIColor colorWithRed:0.26 green:0.26 blue:0.26 alpha:1.0];
     }
 }
@@ -54,7 +54,7 @@
 
 -(UIImageView *)icon {
     if (!_icon) {
-        _icon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"unselected"]];
+        _icon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"XMessageResource.bundle/questionaire_nor"]];
     }
     return _icon;
 }

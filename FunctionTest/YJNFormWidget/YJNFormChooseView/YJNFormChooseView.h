@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YJNFormQuestionConfigProtocol.h"
 
 @class YJNQuestionModel;
-@interface YJNFormChooseView : UIView
+@interface YJNFormChooseView : UIView<YJNFormQuestionConfigProtocol>
 @property (nonatomic, copy) void(^selectedResultBlock)(NSArray <NSNumber *>* selectedIndexs);
 -(void)yjn_prepareForReuse;
--(void)yjn_configViewWithQuestion:(YJNQuestionModel *)question;
 @end

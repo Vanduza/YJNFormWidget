@@ -26,9 +26,12 @@
         _customFont = self.font;
         self.delegate = self;
         _numberOfLines = 0;
+        self.returnKeyType = UIReturnKeyDone;
     }
     return self;
 }
+
+
 
 -(void)setText:(NSString *)text {
     if (text.length) {
@@ -93,7 +96,7 @@
     CGContextClosePath(context);
     CGContextStrokePath(context);
 }
-
+#pragma mark - UITextViewDelegate
 -(void)textViewDidChange:(UITextView *)textView {
     if (self.yjn_delegate) {
         [_yjn_delegate yjn_textDidchanged:self];
@@ -103,6 +106,17 @@
         _numberOfLines = number;
         [self setNeedsDisplay];
     }
+}
+
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if ([text isEqualToString:@"\n"]) {
+        
+        [textView resignFirstResponder];
+        
+        return NO;
+    }
+    
+    return YES;
 }
 
 @end

@@ -8,16 +8,16 @@
 
 #import "YJNFormChooseView.h"
 #import "Masonry.h"
-#import "YJNQuestionModel.h"
+//#import "YJNQuestionModel.h"
 #import "YJNFormOptionView.h"
 
 @interface YJNFormChooseView()
 @property (nonatomic, strong) NSMutableArray *optionViews;
 @property (nonatomic, strong) UILabel *titleLabel;
-@property (nonatomic, assign) YJNChooseStyle style;
+@property (nonatomic, assign) XMsgQuestionType style;
 @end
 @implementation YJNFormChooseView {
-    YJNQuestionModel *_currentQuestion;
+    XMsgQuestionModel *_currentQuestion;
 }
 #pragma mark - 初始化方法
 -(instancetype)init {
@@ -90,15 +90,15 @@
     }
 }
 
--(void)yjn_configViewWithQuestion:(YJNQuestionModel *)question {
+-(void)yjn_configViewWithQuestion:(XMsgQuestionModel *)question {
     _currentQuestion = question;
     //设置问题显示状态,展示状态并且为空标题为红色
-//    if (question.isEmpty) {
-//        _titleLabel.textColor = [UIColor colorWithRed:1.0 green:0.36 blue:0.22 alpha:1.0];
-//    }else {
-//        _titleLabel.textColor = [UIColor colorWithRed:0.26 green:0.26 blue:0.26 alpha:1.0];
-//    }
-//    _titleLabel.text = question.label;
+    if (question.isEmpty) {
+        _titleLabel.textColor = [UIColor colorWithRed:1.0 green:0.36 blue:0.22 alpha:1.0];
+    }else {
+        _titleLabel.textColor = [UIColor colorWithRed:0.26 green:0.26 blue:0.26 alpha:1.0];
+    }
+    _titleLabel.text = question.label;
     _style = question.type;
     for (int i = 0; i < question.options.count; i++) {
         YJNFormOptionView *optionView = [_optionViews objectAtIndex:i];
@@ -107,8 +107,28 @@
             [optionView mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.height.mas_equalTo(50.0f);
             }];
-            NSNumber *result = question.selectedResults?question.selectedResults[i]:@0;
-            optionView.selected = result.boolValue;
+            XMsgQuestionOption *option = question.options[i];
+            optionView.optionLabel.text = option.label;
+            //如果有答案
+            if (question.value.length) {
+                if (question.type == XMsgQuestionTypeRadio) {
+                    if([question.value isEqualToString:option.value]) {
+                        optionView.selected = YES;
+                        question.selectedResults = [self p_getSingleOptionAtIndex:i];
+                    }
+                }else {
+                    NSArray *arr = [question.value componentsSeparatedByString:@","];
+                    for (NSString *str in arr) {
+                        if ([str isEqualToString:option.label]) {
+                            optionView.selected = YES;
+                        }
+                    }
+                    question.selectedResults = [self p_getMultyOptionResults];
+                }
+            }else {
+                NSNumber *result = question.selectedResults?question.selectedResults[i]:@0;
+                optionView.selected = result.boolValue;
+            }
         }
     }
 }
@@ -119,14 +139,14 @@
     YJNFormOptionView *optionView = (YJNFormOptionView *)tap.view;
     optionView.selected = !optionView.selected;
     switch (_style) {
-        case YJNChooseStyleSingle: {
+        case XMsgQuestionTypeRadio: {
             NSArray *selectedIndexs = [self p_getSingleOptionAtIndex:currentIndex];
             if (self.selectedResultBlock) {
                 self.selectedResultBlock(selectedIndexs);
             }
         }break;
             
-        case YJNChooseStyleMulty: {
+        case XMsgQuestionTypeCheckbox: {
             if (self.selectedResultBlock) {
                 NSArray *selectedIndexs = [self p_getMultyOptionResults];
                 self.selectedResultBlock(selectedIndexs);
